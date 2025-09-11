@@ -1,16 +1,17 @@
 let playerChoiceIndex = 0;
 
 while(playerChoiceIndex === 0){
-    let playerChoice = prompt("Input your choice (Rock, Paper or Scissors) [Case Sensitive]");
+    let playerChoice = prompt("Input your choice (Rock, Paper or Scissors)");
+    playerChoiceProcessed = playerChoice.toLowerCase();
 
-    switch(playerChoice){
-        case "Rock":
+    switch(playerChoiceProcessed){
+        case "rock":
             playerChoiceIndex = 1;
             break;
-        case "Paper":
+        case "paper":
             playerChoiceIndex = 2;
             break;
-        case "Scissors":
+        case "scissors":
             playerChoiceIndex = 3;
             break;
         default:
