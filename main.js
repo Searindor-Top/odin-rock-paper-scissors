@@ -20,7 +20,10 @@ function getChoices(){
     let playerChoiceProcessed = "";
 
     while(playerChoiceIndex === 0){
-        let playerChoice = prompt("Input your choice (Rock, Paper or Scissors)");
+        let playerChoice = null;
+        while(playerChoice === null){
+            playerChoice = prompt("Input your choice (Rock, Paper or Scissors)");
+        }
         playerChoiceProcessed = playerChoice.toLowerCase();
 
         switch(playerChoiceProcessed){
