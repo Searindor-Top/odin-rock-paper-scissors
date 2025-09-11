@@ -44,26 +44,36 @@ console.log("Computer choice is: " + computerChoice);
 let playerScore = 0;
 let computerScore = 0;
 
-if(playerChoiceIndex === computerChoiceIndex){
-    console.log("You ended in a draw");
-    playerScore = playerScore + 1;
-    computerScore = computerScore + 1;
-} else if (playerChoiceIndex === 1 && computerChoiceIndex === 2){ // rock vs paper
-    console.log("Computer won this round");
-    computerScore = computerScore + 1;
-} else if (playerChoiceIndex === 1 && computerChoiceIndex === 3){ // rock vs scissors
-    console.log("You won this round");
-    playerScore = playerScore + 1;
-} else if (playerChoiceIndex === 2 && computerChoiceIndex === 1){ // paper vs rock
-    console.log("You won this round");
-    playerScore = playerScore + 1;
-} else if (playerChoiceIndex === 2 && computerChoiceIndex === 3){ // paper vs scissors
-    console.log("Computer won this round");
-    computerScore = computerScore + 1;
-} else if (playerChoiceIndex === 3 && computerChoiceIndex === 1){ // scissors vs rock
-    console.log("Computer won this round");
-    computerScore = computerScore + 1;
-} else if (playerChoiceIndex === 3 && computerChoiceIndex === 2){ // scissors vs paper
-    console.log("You won this round");
-    playerScore = playerScore + 1;
+let scoreArray = [playerScore, computerScore];
+
+scoreArray = playRound(playerChoiceIndex, computerChoiceIndex, scoreArray[0], scoreArray[1]);
+
+function playRound(playerChoiceIndex, computerChoiceIndex, playerScore, computerScore){
+    if(playerChoiceIndex === computerChoiceIndex){
+        console.log("You ended in a draw");
+        playerScore = playerScore + 1;
+        computerScore = computerScore + 1;
+    } else if (playerChoiceIndex === 1 && computerChoiceIndex === 2){ // rock vs paper
+        console.log("Computer won this round");
+        computerScore = computerScore + 1;
+    } else if (playerChoiceIndex === 1 && computerChoiceIndex === 3){ // rock vs scissors
+        console.log("You won this round");
+        playerScore = playerScore + 1;
+    } else if (playerChoiceIndex === 2 && computerChoiceIndex === 1){ // paper vs rock
+        console.log("You won this round");
+        playerScore = playerScore + 1;
+    } else if (playerChoiceIndex === 2 && computerChoiceIndex === 3){ // paper vs scissors
+        console.log("Computer won this round");
+        computerScore = computerScore + 1;
+    } else if (playerChoiceIndex === 3 && computerChoiceIndex === 1){ // scissors vs rock
+        console.log("Computer won this round");
+        computerScore = computerScore + 1;
+    } else if (playerChoiceIndex === 3 && computerChoiceIndex === 2){ // scissors vs paper
+        console.log("You won this round");
+        playerScore = playerScore + 1;
+    }
+    return [playerScore, computerScore];
 }
+
+console.log("Your score is : " + scoreArray[0]);
+console.log("Computer score is : " + scoreArray[1]);
