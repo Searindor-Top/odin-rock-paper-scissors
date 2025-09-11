@@ -21,4 +21,19 @@ while(playerChoiceIndex === 0){
     }
 }
 
-console.log(playerChoiceIndex);
+console.log("Your choice is: " + playerChoiceProcessed);
+
+let computerChoiceIndex = Math.ceil(Math.random() * 3);
+switch(computerChoiceIndex){
+    case 1:
+        computerChoice = "rock";
+        break;
+    case 2:
+        computerChoice = "paper";
+        break;
+    case 3:
+        computerChoice = "scissors";
+        break;
+}
+
+console.log("Computer choice is: " + computerChoice);
