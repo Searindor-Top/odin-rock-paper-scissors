@@ -3,9 +3,38 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/reset.css">
+        <link rel="stylesheet" href="./css/estructura.css">
+        <link rel="stylesheet" href="./css/styles.css">
         <title>Document</title>
     </head>
-    <body>
+    <body class="flex w-100 m-col">
+        <h1>Odin Project - Rock Paper Scissors</h1>
+        <div class="button-container flex m-jcc m-aic m-w100">
+            <div class="flex m-col m-aic">
+                <div id="button-rock" class="game-button"></div>
+                <h2 class="button-subtitle">Rock</h2>
+            </div>
+            <div class="flex m-col m-aic">
+                <div id="button-paper" class="game-button"></div>
+                <h2 class="button-subtitle">Paper</h2>                
+            </div>
+            <div class="flex m-col m-aic">
+                <div id="button-scissors" class="game-button"></div>
+                <h2 class="button-subtitle">Scissors</h2>
+            </div>
+        </div>
+        <div id="game-result" class="flex m-aic m-col m-jcc p-w100">
+            <h3 id="choose" class="m-w100">Choose your choice!</h3>
+            <h3 class="m-hidden">Round number: <span id="game-round"></span></h3>
+            <h3 class="m-hidden">Your choice is: <span id="player-choice"></span></h3>
+            <h3 class="m-hidden">Computer choice is: <span id="computer-choice"></span></h3>
+
+            <h3 class="m-hidden" id="round-result"></h3>
+
+            <h3 class="m-hidden">Your score is: <span id="player-score"></span></h3>
+            <h3 class="m-hidden">Computer score is: <span id="computer-score"></span></h3>
+        </div>
         <script src="main.js"></script>
     </body>
 </html>

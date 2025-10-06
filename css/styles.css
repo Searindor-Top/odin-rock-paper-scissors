@@ -1,0 +1,42 @@
+h1{
+    padding:20px;
+    font-family: Roboto;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.game-button{
+    width:200px;
+    height:200px;
+    background-color:lightblue;
+    border-radius: 50%;
+    background-size: 30%;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 20px;
+}
+
+#button-rock{
+    background-image: url(../images/rock.png);
+}
+
+#button-paper{
+    background-image: url(../images/paper.png);
+}
+
+#button-scissors{
+    background-image: url(../images/scissors.png);
+}
+
+.button-container{
+    margin-bottom:20px;
+}
+
+#choose{
+    padding:20px;
+    font-family: Roboto;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}
