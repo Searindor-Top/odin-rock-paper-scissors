@@ -6,10 +6,10 @@
         <link rel="stylesheet" href="./css/reset.css">
         <link rel="stylesheet" href="./css/estructura.css">
         <link rel="stylesheet" href="./css/styles.css">
-        <title>Document</title>
+        <title>Searindor - Rock Paper Scissors</title>
     </head>
     <body class="flex w-100 m-col">
-        <h1>Odin Project - Rock Paper Scissors</h1>
+        <h1 id="game-round">Odin Project - Rock Paper Scissors</h1>
         <div class="button-container flex m-jcc m-aic m-w100">
             <div class="flex m-col m-aic">
                 <div id="button-rock" class="game-button"></div>
@@ -25,15 +25,18 @@
             </div>
         </div>
         <div id="game-result" class="flex m-aic m-col m-jcc p-w100">
-            <h3 id="choose" class="m-w100">Choose your choice!</h3>
-            <h3 class="m-hidden">Round number: <span id="game-round"></span></h3>
-            <h3 class="m-hidden">Your choice is: <span id="player-choice"></span></h3>
-            <h3 class="m-hidden">Computer choice is: <span id="computer-choice"></span></h3>
+            <h3 id="choose" class="m-w100">Choose your choice, for the best of 5 rounds!</h3>
+            <div class="m-hidden flex m-jcsb game-scores">
+                <h3 class="bold">Your score: <span id="player-score" class="bold"></span></h3>
+                <h3 class="bold">Computer: <span id="computer-score" class="bold"></span></h3>
+            </div>
+            <div class="m-hidden flex m-jcsb game-choices">
+                <h3 class="bold">Your choice is: <span id="player-choice" class="bold"></span></h3>
+                <h3 class="bold">Computer choice is: <span id="computer-choice" class="bold"></span></h3>
+            </div>
 
-            <h3 class="m-hidden" id="round-result"></h3>
+            <h3 class="m-hidden bold" id="round-result"></h3>
 
-            <h3 class="m-hidden">Your score is: <span id="player-score"></span></h3>
-            <h3 class="m-hidden">Computer score is: <span id="computer-score"></span></h3>
         </div>
         <script src="main.js"></script>
     </body>

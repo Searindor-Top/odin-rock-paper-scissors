@@ -35,33 +35,41 @@ function mainGame(playerChoiceIndex){
 
 
         if(gameRound == 1){
-            document.querySelector("#choose").style.display = "none";
-            gameResultH3 = document.querySelectorAll("#game-result>h3:not(#choose)");
+            //document.querySelector("#choose").style.display = "none";
+            gameResultH3 = document.querySelectorAll("#game-result>div:not(#choose), #game-result>h3:not(#choose)");
             gameResultH3.forEach(element => {
                 element.classList.toggle("m-hidden");
             });
+                    
         }
         //roundContentDiv.innerHTML += "<h2>Round number: " + gameRound + "</h2>";
-        document.querySelector("#game-round").innerText = gameRound;
+        document.querySelector("#game-round").innerText = "Round: " + gameRound;
         let choiceArray = getChoices(playerChoiceIndex, roundContentDiv); // choiceArray[0] = playerChoice, choiceArray[1] = computerchoice
         scoreArray = gameLogic(choiceArray[0], choiceArray[1], scoreArray[0], scoreArray[1]);
-        document.querySelector("#round-result").innerText = scoreArray[2];
+
+
+        document.querySelector("#choose").innerText = scoreArray[2];
         document.querySelector("#player-score").innerText = scoreArray[0];
         document.querySelector("#computer-score").innerText = scoreArray[1];
 
         if(gameRound == 5){
             document.querySelector("#choose").style.display = "block";
+
             if(scoreArray[0] > scoreArray[1]){
-                document.querySelector("#choose").innerText = "You won!";
+                document.querySelector("#choose").innerText = "You won the game!";
+                document.querySelector("#choose").style.color = "lightgreen";
             } else if(scoreArray[0] < scoreArray[1]){
-                document.querySelector("#choose").innerText = "Computer won!";
+                document.querySelector("#choose").innerText = "Computer won the game!";
+                document.querySelector("#choose").style.color = "rgb(255, 125, 125)";
             } else {
-                document.querySelector("#choose").innerText = "It's a tie!";
+                document.querySelector("#choose").innerText = "This game is a tie!";
+                document.querySelector("#choose").style.color = "rgb(255, 255, 125)";
             }
-            gameResultH3 = document.querySelectorAll("#game-result>h3:not(#choose)");
+            gameResultH3 = document.querySelectorAll("#game-result>*:not(#choose)");
             gameResultH3.forEach(element => {
                 element.classList.toggle("m-hidden");
             });
+            document.querySelector(".game-scores").classList.toggle("m-hidden");
         }
         gameRound++;
     }
